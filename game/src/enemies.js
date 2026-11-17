@@ -99,6 +99,10 @@ export function updateEnemy(e, dt, px, py, time) {
   } else if (e.kind === 'brute') {
     e.vx = ux * e.speed;
     e.vy = uy * e.speed;
+  } else if (e.kind === 'splitter') {
+    // Drifts toward the player, slow and steady — it splits when destroyed.
+    e.vx = ux * e.speed;
+    e.vy = uy * e.speed;
   }
 
   e.x += e.vx * dt;
